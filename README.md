@@ -9,7 +9,7 @@ This BepInEx plugin for the game Overcooked 2 adds support for:
 - Adjusted the physics update rate for smoother gameplay.
 
 ## Installation
-- Grab the latest release of Overcooked2Fix from [here.](https://github.com/Lyall/Overcooked2Fix/releases)
+- Grab the latest Steam or Epic release of Overcooked2Fix from [here.](https://github.com/Lyall/Overcooked2Fix/releases)
 - Extract the contents of the release zip in to the game directory.<br />(e.g. "**steamapps\common\Overcooked 2**" for Steam).
 - Run the game once to generate a config file located at **GameDirectory\BepinEx\config\Overcooked2Fix.cfg**
 
