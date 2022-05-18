@@ -23,12 +23,17 @@ jobs:
           fileName: "*"
 
     - uses: actions/setup-dotnet@v1
-    - run: mkdir -p ${{ github.event.repository.name }}/BepInEx/plugins
+    - run: mkdir -p ${{ github.event.repository.name }}_x86/BepInEx/plugins
     - run: dotnet build -c Release -o build
-    - run: cp build/${{ github.event.repository.name }}.dll ${{ github.event.repository.name }}/BepInEx/plugins/${{ github.event.repository.name }}.dll
-    - run: unzip BepInEx_x86* -d ${{ github.event.repository.name }}
-    - run: touch ${{ github.event.repository.name }}/EXTRACT_TO_GAME_DIRECTORY
-    - run: cd ${{ github.event.repository.name }}; zip -r ../${{ github.event.repository.name }}_${{ github.event.inputs.version }}.zip ./*
+    - run: cp build/${{ github.event.repository.name }}.dll ${{ github.event.repository.name }}_x86/BepInEx/plugins/${{ github.event.repository.name }}.dll
+    - run: unzip BepInEx_x86* -d ${{ github.event.repository.name }}_x86
+    - run: touch ${{ github.event.repository.name }}_x86/EXTRACT_TO_GAME_DIRECTORY
+    - run: cd ${{ github.event.repository.name }}_x86; zip -r ../${{ github.event.repository.name }}_${{ github.event.inputs.version }}_Steam.zip ./*
+    - run: mkdir -p ${{ github.event.repository.name }}_x64/BepInEx/plugins
+    - run: cp build/${{ github.event.repository.name }}.dll ${{ github.event.repository.name }}_x64/BepInEx/plugins/${{ github.event.repository.name }}.dll
+    - run: unzip BepInEx_x64* -d ${{ github.event.repository.name }}_x64
+    - run: touch ${{ github.event.repository.name }}_x64/EXTRACT_TO_GAME_DIRECTORY
+    - run: cd ${{ github.event.repository.name }}_x64; zip -r ../${{ github.event.repository.name }}_${{ github.event.inputs.version }}_Epic.zip ./*
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "${{ github.event.repository.name }}_${{ github.event.inputs.version }}.zip"
