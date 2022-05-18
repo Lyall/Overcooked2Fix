@@ -36,7 +36,7 @@ jobs:
     - run: cd ${{ github.event.repository.name }}_x64; zip -r ../${{ github.event.repository.name }}_${{ github.event.inputs.version }}_Epic.zip ./*
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "${{ github.event.repository.name }}_${{ github.event.inputs.version }}.zip"
+        artifacts: "${{ github.event.repository.name }}_${{ github.event.inputs.version }}_Steam.zip, ${{ github.event.repository.name }}_${{ github.event.inputs.version }}_Epic.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.event.inputs.version }}
         name: "${{ github.event.inputs.version }}"
