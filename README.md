@@ -18,6 +18,7 @@ This BepInEx plugin for the game Overcooked 2 adds support for:
 
 ## Known Issues
 Please report any issues you see and I'll do my best to fix them.
+- The recipe UI in the top left may appear stretched on certain maps.
 
 ## Screenshots
 ![ezgif-4-b20e21d61c](https://user-images.githubusercontent.com/695941/168957108-a8736c1d-2189-4f12-88fe-f7b396c443eb.gif)
